@@ -20,3 +20,10 @@ ln ~/.config_files/init.vim ~/.config/nvim/
 ln ~/.config_files/.zshrc ~/
 
 ln ~/.config_files/.tmux.conf ~/
+
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1 ~/Downloads/
+# install
+./~/Downloads/fonts/install.sh
+# clean-up a bit
+rm -rf ~/Downloads/fonts
