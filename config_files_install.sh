@@ -1,16 +1,9 @@
 #!/bin/bash
 
-apt install zsh
-
-apt install nvim
-
-apt install git
-
-git clone git@github.com:Mr-TeddyBear/.config_files.git ~/
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 git clone https://github.com/sjl/badwolf.git ~/Downloads
-
-cp ~/Downloads/badwolf/colors
 
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
@@ -26,12 +19,4 @@ ln ~/.config_files/init.vim ~/.config/nvim/
 
 ln ~/.config_files/.zshrc ~/
 
-apt install python3
-
-apt install python3-pip
-
-pip3 install numpy matplotlib numba
-
-sudo apt install arc-theme
-
-ln .config_files/.tmux.conf ~/
+ln ~/.config_files/.tmux.conf ~/
