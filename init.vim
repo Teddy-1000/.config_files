@@ -4,6 +4,8 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
+Plug 'zchee/deoplete-jedi'
+"Plug 'https://github.com/ervandew/supertab.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/bling/vim-bufferline.git'
 Plug 'https://github.com/edkolev/tmuxline.vim'
@@ -11,8 +13,19 @@ Plug 'https://github.com/wesQ3/vim-windowswap.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/vim-python/python-syntax.git'
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+
 " Initialize plugin system
 call plug#end()
+
+let g:deoplete#enable_at_startup = 1
 
 "Anathoer plugin manager"
 "dein Scripts-----------------------------
@@ -88,6 +101,7 @@ let g:python_highlight_all = 1
 "Search tweaks"
 set incsearch 		"Highlights while searching"
 set hlsearch		"Higlight matches"
+set magic
 
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
