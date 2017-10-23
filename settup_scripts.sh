@@ -32,4 +32,6 @@ apt install python3-pip
 
 pip3 install numpy matplotlib numba
 
+sudo apt install arc-theme
 
+ln .config_files/.tmux.conf ~/
