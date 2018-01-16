@@ -15,17 +15,27 @@ mkdir ~/.config/nvim/colors -p
 
 cp ~/Downloads/colors/badwolf.vim ~/.config/nvim/colors/
 
+#create symlink for nvim config file
 rm ~/.config/nvim/init.vim
 
-ln ~/.config_files/init.vim ~/.config/nvim/
+ln -s ~/.config_files/init.vim ~/.config/nvim/
 
+#create symlink for zsh config file
 rm ~/.zshrc
 
-ln ~/.config_files/.zshrc ~/
+ln -s ~/.config_files/.zshrc ~/
 
+#create symlink for tmux config
 rm ~/.tmux.conf
 
-ln ~/.config_files/.tmux.conf ~/
+ln -s ~/.config_files/.tmux.conf ~/
+
+#create symlink for i3 config file
+mkdir ~/.config/i3
+
+rm ~/.config/i3/config
+
+ln -s ~/.config_files/config ~/.config/i3/
 
 mkdir ~/Downloads/font 
 # clone
