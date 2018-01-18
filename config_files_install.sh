@@ -37,6 +37,9 @@ rm ~/.config/i3/config
 
 ln -s ~/.config_files/config ~/.config/i3/
 
+#create symlink for polybar config
+rm ~/.config/polybar/launch.sh
+ln -s ~/.config_files/launch.sh ~/.config/polybar/
 mkdir ~/Downloads/font 
 # clone
 git clone https://github.com/powerline/fonts.git --depth=1 ~/Downloads/font/
