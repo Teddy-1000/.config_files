@@ -1,0 +1,289 @@
+[colors]
+background = #88406e
+background-alt = #9e4d79
+foreground = #f3f4f5
+foreground-alt = #d66c94
+primary = #48cfcb
+secondary = #3c3760
+tertiary = #d66c94
+tertiary-alt = #a26af9
+alert = #ffffff
+
+[settings]
+screenchange-reload = true
+
+throttle-output = 5
+throttle-output-for = 10
+
+throttle-input-for = 30
+
+;format-foreground = ${colors.foreground}
+;format-background = ${colors.tertiary}
+;format-underline = ${colors.secondary}
+;format-overline =
+;format-spacing = 1
+;format-padding = 1
+;format-margin =
+;format-offset =
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+[bar/topbar]
+monitor = ${env:MONITOR:LVDS1}
+width = 100%
+height = 15
+offset-x = 0
+offset-y = -5
+
+font-0 = "Ubuntu Mono derivative Powerline Regualr:pixelsize=9;0"
+
+;background = ${xrdb:color9}
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 2
+overline-color = #f00
+underline-size = 4
+underline-color = #00f
+
+border-top-size = 7
+border-top-color = ${colors.secondary}
+
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+modules-left = i3 xwindow
+modules-right = wlan battery volume date 
+
+tray-position = right
+tray-padding = 2
+;tray-transparent = true
+tray-background = ${colors.tertiary-alt}
+
+wm-restack = i3
+ipc = true
+radius = 2
+override-redirect = true
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+[module/volume]
+type = internal/volume
+
+; Soundcard to be used
+; Usually in the format hw:#
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+; Name of the master mixer
+; Default: Master
+master-mixer = Master
+
+; Optionally define speaker and headphone mixers
+; Use the following command to list available mixer controls:
+; $ amixer scontrols | sed -nr "s/.*'([[:alnum:]]+)'.*/\1/p"
+; Default: none
+speaker-mixer = Speaker
+; Default: none
+headphone-mixer = Headphone
+
+; NOTE: This is required if headphone_mixer is defined
+; Use the following command to list available device controls
+; $ amixer controls | sed -r "/CARD/\!d; s/.*=([0-9]+).*name='([^']+)'.*/printf '%3.0f: %s\n' '\1' '\2'/e" | sort
+; Default: none
+headphone-id = 9
+
+; Use volume mapping (similar to amixer -M and alsamixer), where the increase in volume is linear to the ear
+; Default: false
+mapped = true
+
+[module/cmus]
+type = custom/script
+label = 
+exec = zscroll "$(cat /home/p3pt/.tmp/now-playing)"
+tail = true
+
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = ACAD 
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+
+label-discharging =  T:%time% P:%percentage%% 
+format-discharging = <label-discharging>
+
+ramp-capacity-0 = battery-0
+ramp-capacity-1 = battery-1
+ramp-capacity-2 = battery-2
+ramp-capacity-3 = battery-3
+ramp-capacity-4 = battery-4
+
+
+label-charging =  Charging %percentage%%  
+format-charging = <label-charging>
+
+label-full = Fully Charged
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+label-padding = 2
+label-background = ${colors.background-alt}
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+label-layout = %{F#55}%{F-} %layout%
+;label-layout-underline = ${colors.secondary}
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+;label-indicator-underline = ${colors.secondary}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+mount-1 = /home
+mount-2 = /invalid/mountpoint
+
+label-mounted = %mountpoint%: %percentage_free%%
+
+label-unmounted = %mountpoint%: not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = #{colors.foreground}
+label-mode-background = ${colors.tertiary}
+
+label-focused = %index% 
+label-focused-background = ${colors.tertiary}
+;label-focused-underline = ${colors.secondary}
+label-focused-padding = 2
+
+label-unfocused-padding = 2
+label-unfocused-background = ${colors.tertiary-alt}
+;label-unfocused-underline = ${colors.secondary}
+
+label-urgent-background = ${colors.primary}
+label-urgent-padding = 2
+
+label-visible = %index%
+label-visible-background = ${colors.primary}
+;label-visible-underline = #a26af9
+label-visible-padding = 2
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix-padding = 2
+format-prefix-foreground = ${colors.secondary}
+format-prefix-background = ${colors.tertiary-alt}
+;format-prefix-underline = ${colors.secondary}
+label = %percentage%%
+label-padding = 2
+label-background = ${colors.tertiary-alt}
+;label-underline = ${colors.secondary}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix-padding = 2
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.tertiary}
+;format-prefix-underline = ${colors.secondary}
+label = %percentage_used%%
+label-padding = 2
+label-background = ${colors.tertiary}
+;label-underline = ${colors.secondary}
+
+[module/wlan]
+type = custom/script
+interval = 1
+exec = "nmcli d show wlp8s0 | grep 'GENERAL.CONNECTION' | awk '{print $2}'"
+format-prefix-padding = 2
+format-prefix-background = ${colors.tertiary}
+format-prefix-foreground = ${colors.background}
+;format-prefix-underline = ${colors.secondary}
+label-padding = 2
+label-background = ${colors.tertiary}
+;label-underline = ${colors.secondary}
+
+#[module/wlan]
+#type = internal/network
+#interface = wlp0s26u1u1
+#interval = 3.0
+#
+#format-connected = <ramp-signal> <label-connected>
+#format-connected-underline = #9f78e1
+#format-disconnected-underline = ${self.format-connected-underline}
+#
+#label-connected = %essid%
+#label-disconnected = %ifname% disconnected
+#label-disconnected-foreground = ${colors.foreground-alt}
+#
+#ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/eth]
+type = internal/network
+interface = enp7s0
+interval = 3.0
+
+;format-connected-underline = #55aa55
+format-connected-prefix = 
+format-connected-padding = 2
+format-connected-foreground-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+;format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%a, %b %d"
+date-alt = "%Y-%m-%d"
+
+time = "%l:%M %p"
+time-alt = "%H:%M:%S"
+
+format-prefix-padding = 2
+format-prefix-foreground = ${colors.secondary}
+format-prefix-background = ${colors.tertiary-alt}
+;format-underline = ${colors.secondary}
+
+label = %date% %time%
+label-background = ${colors.tertiary-alt}
+label-padding = 2

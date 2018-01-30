@@ -21,7 +21,7 @@ sudo apt -y install curl
 
 sudo apt -y install neovim
 
-sudo apt -y instasll nvim
+sudo apt -y install nvim
 
 sudo apt -y install git
 
