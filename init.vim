@@ -18,6 +18,7 @@ Plug 'https://github.com/ervandew/supertab.git'
 Plug 'https://github.com/haya14busa/incsearch.vim.git'
 "Plug 'https://github.com/vim-python/python-syntax.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
+Plug 'https://github.com/scrooloose/nerdtree.git'
 
 "Latex packages
 Plug 'https://github.com/donRaphaco/neotex.git'
@@ -40,7 +41,15 @@ let g:deoplete#enable_at_startup = 1
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 
-"
+" NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+" AutoClose
+let g:AutoPairsFlyMode = 0
+
 set clipboard=unnamed,unnamedplus
 colorscheme badwolf 	"Set colorscheme"
 

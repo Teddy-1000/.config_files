@@ -38,7 +38,7 @@ bindcode 122 exec pactl set-sink-volume 0 -5%
 #rofi
 bindsym Mod1+d exec rofi -show run -config /home/username/.config/rofi
 #lockscreen
-bindsym Mod1+p exec i3lock -e -i ~/Pictures/eclipse.png
+bindsym Mod1+p exec i3lock -e -i ~/Pictures/yoda_facet.png
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
