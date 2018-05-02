@@ -24,6 +24,9 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/donRaphaco/neotex.git'
 Plug 'lervag/vimtex'
 
+"Linting/syntax
+Plug 'neomake/neomake'
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
