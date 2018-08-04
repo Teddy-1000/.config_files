@@ -4,6 +4,9 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
+"Colorscheme
+Plug 'morhetz/gruvbox'
+
 "UI tweaks
 Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/bling/vim-bufferline.git'
@@ -54,8 +57,8 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 let g:AutoPairsFlyMode = 0
 
 set clipboard=unnamed,unnamedplus
-colorscheme badwolf 	"Set colorscheme"
-
+colorscheme gruvbox "Set colorscheme"
+set background=dark "Set background color
 syntax enable 		"Enable syntax processing"
 syntax on
 
