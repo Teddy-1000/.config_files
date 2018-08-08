@@ -15,6 +15,11 @@ mkdir ~/.config/nvim/colors -p
 
 cp ~/Downloads/colors/badwolf.vim ~/.config/nvim/colors/
 
+#Create symlink for awesome config
+rm -r ~/.config/awesome
+
+ln -s ~/.config_files/awesome ~/.config/
+
 #create symlink for nvim config file
 rm ~/.config/nvim/init.vim
 
@@ -36,6 +41,11 @@ mkdir ~/.config/i3
 rm ~/.config/i3/config
 
 ln -s ~/.config_files/config ~/.config/i3/
+
+#Set colorsheme for terminal
+#Install gruvbox dark
+wget -O gogh https://git.io/vQgMr && chmod +x gogh && ./gogh && rm gogh
+
 
 #create symlink for polybar config
 rm ~/.config/polybar/launch.sh
