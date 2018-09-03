@@ -29,6 +29,8 @@ sudo apt -y install i3lock
 
 sudo apt -y install xautolock
 
+sudo apt -y install xss-lock
+
 sudo apt -y install python3
 
 sudo apt -y install python3-pip

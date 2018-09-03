@@ -735,6 +735,6 @@ client.connect_signal("property::maximized", border_adjust)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 -- {{{ Programs and functions to be run at startup
-awful.util.spawn_with_shell("xautolock -detectsleep -locker 'i3lock -e -i ~/Pictures/r6_lion.png' -time 2")
+awful.util.spawn_with_shell("xautolock -detectsleep -locker 'i3lock -e -i ~/Pictures/r6_lion.png' -time 5")
 awful.util.spawn_with_shell("pgrep -u $USER -x nm-applet > /dev/nul || (nm-applet &)")
 awful.util.spawn_with_shell("xss-lock -- i3lock -e -i ~/Pictures/r6_lion.png")
