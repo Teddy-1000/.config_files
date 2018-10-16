@@ -107,6 +107,7 @@ alias luaconfig="nvim ~/.config_files/awesome/rc.lua"
 # Yavide alias
 alias yavide="gvim --servername yavide -f -N -u /opt/yavide/.vimrc -u /opt/yavide/.vimrc"
 alias nosetests="nosetests3"
+alias windows_remote="xfreerdp /u:amundis /v:win.uio.no /w:1920 /h:1080 /cert-ignore"
 
 #Pluginmanger
 source $HOME/antigen.zsh
@@ -126,7 +127,4 @@ antigen bundle zsh-users/zsh-completions
 antigen theme agnoster
 
 antigen apply
-
-
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
