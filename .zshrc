@@ -108,6 +108,8 @@ alias luaconfig="nvim ~/.config_files/awesome/rc.lua"
 alias yavide="gvim --servername yavide -f -N -u /opt/yavide/.vimrc -u /opt/yavide/.vimrc"
 alias nosetests="nosetests3"
 alias windows_remote="xfreerdp /u:amundis /v:win.uio.no /w:1920 /h:1080 /cert-ignore"
+alias extarz="tar -xvzf"
+alias extar="tar -xvf"
 
 #Pluginmanger
 source $HOME/antigen.zsh
