@@ -139,6 +139,9 @@ call neomake#configure#automake('nw', 750)
 nmap <F8> :SCCompile<cr>
 nmap <F9> :SCCompileRun<cr>
 
+call SingleCompile#ChooseCompiler('cpp', 'clang')
+call SingleCompile#SetOutfile('cpp', 'clang', '$(FILE_NAME)$' . '.x')
+call SingleCompile#SetCompilerTemplate('c','gcc','GNU C Complier','gcc','-o ' . ' $(FILE_NAME)$' . '.x' . ' -lm', './$(FILE_NAME)$' . '.x')
 
 
 " fzf-vim
