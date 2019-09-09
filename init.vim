@@ -2,7 +2,7 @@
 
 """ Vim-Plug
 call plug#begin()
-
+set encoding=UTF-8
 " Aesthetics - Main
 Plug 'dracula/vim'
 Plug 'vim-airline/vim-airline'
@@ -15,6 +15,7 @@ Plug 'junegunn/vim-journal'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'nightsense/forgotten'
 Plug 'zaki/zazen'
+Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
 
 " Aethetics - Additional
