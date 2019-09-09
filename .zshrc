@@ -6,7 +6,24 @@
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
+#Pluginmanger
+source $HOME/antigen.zsh
 
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+#antigen bundle zsh-users/autojump
+#antigen bundle command-not-found
+#antigen bundle zsh-users/debianreso
+#antigen bundle vi-mode
+
+
+antigen theme agnoster
+
+antigen apply
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -110,23 +127,6 @@ alias nosetests="nosetests3"
 alias windows_remote="xfreerdp /u:amundis /v:win.uio.no /w:1920 /h:1080 /cert-ignore"
 alias extarz="tar -xvzf"
 alias extar="tar -xvf"
+alias uiordp="xfreerdp /v:win.uio.no /d:uio /u:amundis /size:2560x1440"
 
-#Pluginmanger
-source $HOME/antigen.zsh
-
-antigen use oh-my-zsh
-
-antigen bundle git
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-#antigen bundle zsh-users/autojump
-#antigen bundle command-not-found
-#antigen bundle zsh-users/debian
-#antigen bundle vi-mode
-
-
-antigen theme agnoster
-
-antigen apply
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
