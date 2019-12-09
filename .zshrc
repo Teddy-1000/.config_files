@@ -127,6 +127,7 @@ alias nosetests="nosetests3"
 alias windows_remote="xfreerdp /u:amundis /v:win.uio.no /w:1920 /h:1080 /cert-ignore"
 alias extarz="tar -xvzf"
 alias extar="tar -xvf"
-alias uiordp="xfreerdp /v:win.uio.no /d:uio /u:amundis /size:2560x1440"
+alias windows="xfreerdp /v:win.uio.no /d:uio /u:amundis /size:2560x1440"
+alias ifi="ssh amundis@login.ifi.uio.no"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
