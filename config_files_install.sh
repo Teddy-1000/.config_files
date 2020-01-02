@@ -13,6 +13,10 @@ mkdir ~/.config/nvim/ -p
 
 mkdir ~/.config/nvim/colors -p
 
+#Make symlink for zshrc
+
+ln -sf ~/.config_files/.zshrc ~/
+
 cp ~/Downloads/colors/badwolf.vim ~/.config/nvim/colors/
 
 #Create symlink for awesome config

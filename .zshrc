@@ -2,12 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/amund/.oh-my-zsh
-  export PATH=$PATH:/home/amund/bin/
+  export ZSH=/uio/hume/student-u62/amundis/.oh-my-zsh
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
+POWERLEVEL9K_PROMT_ON_NEWLINE=true
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -47,28 +48,13 @@ ZSH_THEME="agnoster"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-#Pluginmanger
-if [[ -f ~/.zpm/zpm.zsh ]]; then
-	source ~/.zpm/zpm.zsh
-else
-	git clone --recursive https://github.com/horosgrisa/zpm ~/.zpm
-	source ~/.zpm/zpm.zsh
-fi
-
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  zsh-syntax-highlighting
-)
-
+plugins=(git alias-finder command-not-found colored-man-pages colorize pep8 pip
+         zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
-
-# setting vim keys
-bindkey -v
 
 # User configuration
 
@@ -98,4 +84,4 @@ bindkey -v
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias py="python3"
+. ~/.alias
