@@ -1,15 +1,31 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
-  export ZSH=/uio/hume/student-u62/amundis/.oh-my-zsh
-
+# Path to your oh-my-zsh installation.  export ZSH=/home/amund/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 POWERLEVEL9K_PROMT_ON_NEWLINE=true
+=======
+#Pluginmanger
+source $HOME/antigen.zsh
 
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+#antigen bundle zsh-users/autojump
+#antigen bundle command-not-found
+#antigen bundle zsh-users/debianreso
+#antigen bundle vi-mode
+
+
+antigen theme agnoster
+
+antigen apply
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -48,6 +64,15 @@ POWERLEVEL9K_PROMT_ON_NEWLINE=true
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+
+#if [[ -f ~/.zpm/zpm.zsh ]]; then
+#	source ~/.zpm/zpm.zsh
+#else
+#	git clone --recursive https://github.com/horosgrisa/zpm ~/.zpm
+#	source ~/.zpm/zpm.zsh
+#fi
+
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -55,6 +80,13 @@ POWERLEVEL9K_PROMT_ON_NEWLINE=true
 plugins=(git alias-finder command-not-found colored-man-pages colorize pep8 pip
          zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
+=======
+#plugins=(
+#  git
+#  zsh-syntax-highlighting
+
+
+#source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -74,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -85,3 +117,21 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 . ~/.alias
+=======
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias vimconfig="nvim ~/.config_files/init.vim"
+alias py="python3"
+alias yavide="gvim --servername yavide -f -N -u /opt/yavide/.vimrc"
+alias vim="nvim"
+alias luaconfig="nvim ~/.config_files/awesome/rc.lua"
+# Yavide alias
+alias yavide="gvim --servername yavide -f -N -u /opt/yavide/.vimrc -u /opt/yavide/.vimrc"
+alias nosetests="nosetests3"
+alias windows_remote="xfreerdp /u:amundis /v:win.uio.no /w:1920 /h:1080 /cert-ignore"
+alias extarz="tar -xvzf"
+alias extar="tar -xvf"
+alias windows="xfreerdp /v:win.uio.no /d:uio /u:amundis /size:2560x1440"
+alias ifi="ssh amundis@login.ifi.uio.no"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
