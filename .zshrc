@@ -1,11 +1,13 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Path to your oh-my-zsh installation.
 # Path to your oh-my-zsh installation.  export ZSH=/home/amund/.oh-my-zsh
-  export PATH=$PATH:/home/amund/bin/
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
+POWERLEVEL9K_PROMT_ON_NEWLINE=true
+=======
 #Pluginmanger
 source $HOME/antigen.zsh
 
@@ -63,9 +65,6 @@ antigen apply
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 
-
-
-
 #if [[ -f ~/.zpm/zpm.zsh ]]; then
 #	source ~/.zpm/zpm.zsh
 #else
@@ -78,15 +77,16 @@ antigen apply
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+plugins=(git alias-finder command-not-found colored-man-pages colorize pep8 pip
+         zsh-syntax-highlighting zsh-autosuggestions)
+source $ZSH/oh-my-zsh.sh
+=======
 #plugins=(
 #  git
 #  zsh-syntax-highlighting
 
 
 #source $ZSH/oh-my-zsh.sh
-
-# setting vim keys
-bindkey -v
 
 # User configuration
 
@@ -114,6 +114,10 @@ bindkey -v
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+. ~/.alias
+=======
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias vimconfig="nvim ~/.config_files/init.vim"
