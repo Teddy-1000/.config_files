@@ -1,6 +1,5 @@
 """ Optixal's Neovim Init.vim
 
-
 """ Vim-Plug
 call plug#begin()
 set encoding=UTF-8
@@ -24,7 +23,6 @@ Plug 'nightsense/nemo'
 Plug 'yuttie/hydrangea-vim'
 Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
 Plug 'rhysd/vim-color-spring-night'
-Plug 'sjl/badwolf'
 
 " Functionalities
 Plug 'tpope/vim-fugitive'
@@ -36,8 +34,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'ervandew/supertab'
-"Plug 'jiangmiao/auto-pairs'
-Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-abolish'
@@ -55,27 +52,24 @@ Plug 'vim-scripts/SingleCompile'
 Plug 'neomake/neomake'
 "Plug 'w0rp/ale'
 
-"Quick Run files
-Plug 'huytd/vim-quickrun'
-
 " Entertainment
 " Plug 'ryanss/vim-hackernews'
 
 call plug#end()
 
 """ Python3 VirtualEnv
-"let g:python3_host_prog = expand('~/.config/nvim/env/bin/python')
+let g:python3_host_prog = expand('~/.config/nvim/env/bin/python')
 
 """ Coloring
 syntax on
-"color dracula
+color dracula
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
 highlight NonText guibg=none
 
 " Opaque Background (Comment out to use terminal's profile)
-"set termguicolors
+set termguicolors
 
 " Transparent Background (For i3 and compton)
 "highlight Normal guibg=NONE ctermbg=NONE
@@ -92,6 +86,7 @@ set wrap breakindent
 set encoding=utf-8
 set number
 set title
+
 """ Plugin Configurations
 
 " NERDTree
@@ -264,14 +259,13 @@ nmap <leader>n :HackerNews best<CR>J
 nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
-nnoremap <F5> :QuickRunExecute<CR>
+
 
 set clipboard=unnamed,unnamedplus
-color gruvbox "Set colorscheme"
+"colorscheme gruvbox "Set colorscheme"
 set background=dark "Set background color
 syntax enable 		"Enable syntax processing"
 syntax on
-let g:gruvbox_contrast_light = 'soft'
 
 set tabstop=4		"Number of spaces show for tab"
 set softtabstop=4	"Number of spaces in tab"
@@ -281,7 +275,6 @@ set expandtab		"Tabs are spaces"
 set termguicolors
 
 "UI tweaks"
-set nocompatible
 set number	    	"Show linenumbers"
 set relativenumber
 set cursorline		"Higlight cursot line"
