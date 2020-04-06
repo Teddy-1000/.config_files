@@ -48,7 +48,7 @@ Plug 'vim-scripts/loremipsum'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'metakirby5/codi.vim'
-Plug 'vim-scripts/SingleCompile'
+"""Plug 'vim-scripts/SingleCompile'
 Plug 'neomake/neomake'
 "Plug 'w0rp/ale'
 
@@ -58,19 +58,22 @@ Plug 'neomake/neomake'
 call plug#end()
 
 """ Python3 VirtualEnv
-let g:python3_host_prog = expand('~/.config/nvim/env/bin/python')
+let g:python3_host_prog = expand('/usr/bin/python')
+
+""" Python2 env
+let g:python2_host_prog = expand('/usr/bin/python2')
+
 
 """ Coloring
 syntax on
-color dracula
+color gruvbox
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
 highlight NonText guibg=none
 
 " Opaque Background (Comment out to use terminal's profile)
-set termguicolors
-
+"set termguicolors
 " Transparent Background (For i3 and compton)
 "highlight Normal guibg=NONE ctermbg=NONE
 "highlight LineNr guibg=NONE ctermbg=NONE
@@ -98,7 +101,7 @@ let g:NERDTreeDirArrowCollapsible = '↡'
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
 let g:airline_section_warning = ''
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " Neovim :Terminal
 tmap <Esc> <C-\><C-n>
@@ -140,9 +143,9 @@ call neomake#configure#automake('nw', 750)
 nmap <F8> :SCCompile<cr>
 nmap <F9> :SCCompileRun<cr>
 
-call SingleCompile#ChooseCompiler('cpp', 'clang')
-call SingleCompile#SetOutfile('cpp', 'clang', '$(FILE_NAME)$' . '.x')
-call SingleCompile#SetCompilerTemplate('c','gcc','GNU C Complier','gcc','-o ' . ' $(FILE_NAME)$' . '.x' . ' -lm', './$(FILE_NAME)$' . '.x')
+"call SingleCompile#ChooseCompiler('cpp', 'clang')
+"call SingleCompile#SetOutfile('cpp', 'clang', '$(FILE_NAME)$' . '.x')
+"call SingleCompile#SetCompilerTemplate('c','gcc','GNU C Complier','gcc','-o ' . ' $(FILE_NAME)$' . '.x' . ' -lm', './$(FILE_NAME)$' . '.x')
 
 
 " fzf-vim
@@ -263,7 +266,7 @@ nmap <S-Tab> :bprevious<CR>
 
 set clipboard=unnamed,unnamedplus
 "colorscheme gruvbox "Set colorscheme"
-set background=dark "Set background color
+"set background=dark "Set background color
 syntax enable 		"Enable syntax processing"
 syntax on
 
@@ -306,4 +309,7 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
+highlight Normal guibg=none
+highlight NonText guibg=none
+
 

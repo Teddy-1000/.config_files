@@ -20,9 +20,9 @@ ln -sf ~/.config_files/.zshrc ~/
 cp ~/Downloads/colors/badwolf.vim ~/.config/nvim/colors/
 
 #Create symlink for awesome config
-rm -r ~/.config/awesome
+#rm -r ~/.config/awesome
 
-ln -s ~/.config_files/awesome ~/.config/
+#ln -s ~/.config_files/awesome ~/.config/
 
 #create symlink for nvim config file
 rm ~/.config/nvim/init.vim
@@ -30,9 +30,9 @@ rm ~/.config/nvim/init.vim
 ln -s ~/.config_files/init.vim ~/.config/nvim/
 
 #create symlink for zsh config file
-rm ~/.zshrc
+#rm ~/.zshrc
 
-ln -s ~/.config_files/.zshrc ~/
+#ln -s ~/.config_files/.zshrc ~/
 
 #create symlink for tmux config
 rm ~/.tmux.conf
@@ -40,9 +40,9 @@ rm ~/.tmux.conf
 ln -s ~/.config_files/.tmux.conf ~/
 
 #create symlink for i3 config file
-mkdir ~/.config/i3
+#mkdir ~/.config/i3
 
-rm ~/.config/i3/config
+#rm ~/.config/i3/config
 
 ln -s ~/.config_files/config ~/.config/i3/
 

@@ -1,15 +1,15 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
-# Path to your oh-my-zsh installation.  export ZSH=/home/amund/.oh-my-zsh
+# Path to your oh-my-zsh installation.  
+export ZSH=/home/amundis/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 POWERLEVEL9K_PROMT_ON_NEWLINE=true
-=======
 #Pluginmanger
-source $HOME/antigen.zsh
+source $HOME/.config_files/antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -80,7 +80,7 @@ antigen apply
 plugins=(git alias-finder command-not-found colored-man-pages colorize pep8 pip
          zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
-=======
+#=======
 #plugins=(
 #  git
 #  zsh-syntax-highlighting
@@ -96,17 +96,31 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='mvim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
  export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+#set defult editor path
+
+export EDITOR='nvim'
+
+if [[ -z "$TMUX" ]] ;then
+    ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
+    if [[ -z "$ID" ]] ;then # if not available create a new one
+        tmux new-session
+    else
+        tmux attach-session -t "$ID" # if available attach to it
+    fi
+fi
+
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -117,21 +131,21 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 . ~/.alias
-=======
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias vimconfig="nvim ~/.config_files/init.vim"
-alias py="python3"
-alias yavide="gvim --servername yavide -f -N -u /opt/yavide/.vimrc"
-alias vim="nvim"
-alias luaconfig="nvim ~/.config_files/awesome/rc.lua"
-# Yavide alias
-alias yavide="gvim --servername yavide -f -N -u /opt/yavide/.vimrc -u /opt/yavide/.vimrc"
-alias nosetests="nosetests3"
-alias windows_remote="xfreerdp /u:amundis /v:win.uio.no /w:1920 /h:1080 /cert-ignore"
-alias extarz="tar -xvzf"
-alias extar="tar -xvf"
-alias windows="xfreerdp /v:win.uio.no /d:uio /u:amundis /size:2560x1440"
-alias ifi="ssh amundis@login.ifi.uio.no"
-
+#=======
+#alias zshconfig="nvim ~/.zshrc"
+#alias ohmyzsh="nvim ~/.oh-my-zsh"
+#alias vimconfig="nvim ~/.config_files/init.vim"
+#alias py="python3"
+#alias yavide="gvim --servername yavide -f -N -u /opt/yavide/.vimrc"
+#alias vim="nvim"
+#alias luaconfig="nvim ~/.config_files/awesome/rc.lua"
+## Yavide alias
+#alias yavide="gvim --servername yavide -f -N -u /opt/yavide/.vimrc -u /opt/yavide/.vimrc"
+#alias nosetests="nosetests3"
+#alias windows_remote="xfreerdp /u:amundis /v:win.uio.no /w:1920 /h:1080 /cert-ignore"
+#alias extarz="tar -xvzf"
+#alias extar="tar -xvf"
+#alias windows="xfreerdp /v:win.uio.no /d:uio /u:amundis /size:2560x1440"
+#alias ifi="ssh amundis@login.ifi.uio.no"
+tmux
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
