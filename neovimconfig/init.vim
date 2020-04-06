@@ -1,6 +1,5 @@
 """ Optixal's Neovim Init.vim
 
-
 """ Vim-Plug
 call plug#begin()
 set encoding=UTF-8
@@ -24,7 +23,6 @@ Plug 'nightsense/nemo'
 Plug 'yuttie/hydrangea-vim'
 Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
 Plug 'rhysd/vim-color-spring-night'
-Plug 'sjl/badwolf'
 
 " Functionalities
 Plug 'tpope/vim-fugitive'
@@ -36,8 +34,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'ervandew/supertab'
-"Plug 'jiangmiao/auto-pairs'
-Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-abolish'
@@ -51,12 +48,9 @@ Plug 'vim-scripts/loremipsum'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'metakirby5/codi.vim'
-"""Plug 'vim-scripts/SingleCompile'
+Plug 'vim-scripts/SingleCompile'
 Plug 'neomake/neomake'
 "Plug 'w0rp/ale'
-
-"Quick Run files
-Plug 'huytd/vim-quickrun'
 
 " Entertainment
 " Plug 'ryanss/vim-hackernews'
@@ -64,27 +58,19 @@ Plug 'huytd/vim-quickrun'
 call plug#end()
 
 """ Python3 VirtualEnv
-let g:python3_host_prog = expand('/usr/bin/python')
-
-""" Python2 env
-let g:python2_host_prog = expand('/usr/bin/python2')
-
+let g:python3_host_prog = expand('~/.config/nvim/env/bin/python')
 
 """ Coloring
 syntax on
-color gruvbox
-"let g:python3_host_prog = expand('~/.config/nvim/env/bin/python')
-
-""" Coloring
-syntax on
-"color dracula
+color dracula
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
 highlight NonText guibg=none
 
 " Opaque Background (Comment out to use terminal's profile)
-"set termguicolors
+set termguicolors
+
 " Transparent Background (For i3 and compton)
 "highlight Normal guibg=NONE ctermbg=NONE
 "highlight LineNr guibg=NONE ctermbg=NONE
@@ -100,6 +86,7 @@ set wrap breakindent
 set encoding=utf-8
 set number
 set title
+
 """ Plugin Configurations
 
 " NERDTree
@@ -111,7 +98,7 @@ let g:NERDTreeDirArrowCollapsible = '↡'
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
 let g:airline_section_warning = ''
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 
 " Neovim :Terminal
 tmap <Esc> <C-\><C-n>
@@ -153,9 +140,9 @@ call neomake#configure#automake('nw', 750)
 nmap <F8> :SCCompile<cr>
 nmap <F9> :SCCompileRun<cr>
 
-"call SingleCompile#ChooseCompiler('cpp', 'clang')
-"call SingleCompile#SetOutfile('cpp', 'clang', '$(FILE_NAME)$' . '.x')
-"call SingleCompile#SetCompilerTemplate('c','gcc','GNU C Complier','gcc','-o ' . ' $(FILE_NAME)$' . '.x' . ' -lm', './$(FILE_NAME)$' . '.x')
+call SingleCompile#ChooseCompiler('cpp', 'clang')
+call SingleCompile#SetOutfile('cpp', 'clang', '$(FILE_NAME)$' . '.x')
+call SingleCompile#SetCompilerTemplate('c','gcc','GNU C Complier','gcc','-o ' . ' $(FILE_NAME)$' . '.x' . ' -lm', './$(FILE_NAME)$' . '.x')
 
 
 " fzf-vim
@@ -272,19 +259,13 @@ nmap <leader>n :HackerNews best<CR>J
 nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
-nnoremap <F5> :QuickRunExecute<CR>
+
 
 set clipboard=unnamed,unnamedplus
-<<<<<<< HEAD
 "colorscheme gruvbox "Set colorscheme"
-"set background=dark "Set background color
-=======
-color gruvbox "Set colorscheme"
 set background=dark "Set background color
->>>>>>> fee67f2a015ddff7c066f5f1770b3b1a255bdc94
 syntax enable 		"Enable syntax processing"
 syntax on
-let g:gruvbox_contrast_light = 'soft'
 
 set tabstop=4		"Number of spaces show for tab"
 set softtabstop=4	"Number of spaces in tab"
@@ -294,7 +275,6 @@ set expandtab		"Tabs are spaces"
 set termguicolors
 
 "UI tweaks"
-set nocompatible
 set number	    	"Show linenumbers"
 set relativenumber
 set cursorline		"Higlight cursot line"
@@ -326,7 +306,4 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
-highlight Normal guibg=none
-highlight NonText guibg=none
-
 
