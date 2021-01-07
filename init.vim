@@ -1,4 +1,4 @@
-""" Optixal's Neovim Init.vim
+""" MrTeddyBear's Neovim init.vim
 
 
 """ Vim-Plug
@@ -25,6 +25,7 @@ Plug 'yuttie/hydrangea-vim'
 Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
 Plug 'rhysd/vim-color-spring-night'
 Plug 'sjl/badwolf'
+Plug 'sainnhe/sonokai'
 
 " Functionalities
 Plug 'tpope/vim-fugitive'
@@ -275,13 +276,10 @@ nmap <S-Tab> :bprevious<CR>
 nnoremap <F5> :QuickRunExecute<CR>
 
 set clipboard=unnamed,unnamedplus
-<<<<<<< HEAD
 "colorscheme gruvbox "Set colorscheme"
 "set background=dark "Set background color
-=======
 color gruvbox "Set colorscheme"
 set background=dark "Set background color
->>>>>>> fee67f2a015ddff7c066f5f1770b3b1a255bdc94
 syntax enable 		"Enable syntax processing"
 syntax on
 let g:gruvbox_contrast_light = 'soft'
