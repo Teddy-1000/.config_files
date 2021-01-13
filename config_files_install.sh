@@ -50,6 +50,11 @@ ln -s ~/.config_files/config ~/.config/i3/
 #Install gruvbox dark
 wget -O gogh https://git.io/vQgMr && chmod +x gogh && ./gogh && rm gogh
 
+# Create symlink for alias file
+
+ln -s ~/.config_files/.alias ~/.alias
+
+
 
 #create symlink for polybar config
 rm ~/.config/polybar/launch.sh

@@ -9,7 +9,7 @@ export ZSH=/home/amundis/.oh-my-zsh
 ZSH_THEME="agnoster"
 POWERLEVEL9K_PROMT_ON_NEWLINE=true
 #Pluginmanger
-source $HOME/.config_files/antigen.zsh
+source $HOME/.antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -24,6 +24,12 @@ antigen bundle vscode
 #antigen bundle zsh-users/debianreso
 #antigen bundle vi-mode
 
+antigen bundle zsh-users/autojump
+antigen bundle command-not-found
+antigen bundle zsh-users/debianreso
+antigen bundle vi-mode
+antigen bundle fzf
+antigen bundle supercrabtree/k
 
 antigen theme agnoster
 
@@ -79,8 +85,8 @@ antigen apply
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git alias-finder command-not-found colored-man-pages colorize pep8 pip
-         zsh-syntax-highlighting zsh-autosuggestions)
+#plugins=(git alias-finder command-not-found colored-man-pages colorize pep8 pip
+ #       fzf zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 #=======
 #plugins=(
@@ -114,14 +120,34 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 
-if [[ -z "$TMUX" ]] ;then
-    ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
-    if [[ -z "$ID" ]] ;then # if not available create a new one
-        tmux new-session
-    else
-        tmux attach-session -t "$ID" # if available attach to it
-    fi
+
+session_name="sesh"
+
+# 1. First you check if a tmux session exists with a given name.
+tmux has-session -t=$session_name 2> /dev/null
+
+# 2. Create the session if it doesn't exists.
+if [[ $? -ne 0 ]]; then
+  TMUX='' tmux new-session -d -s "$session_name"
 fi
+
+# 3. Attach if outside of tmux, switch if you're in tmux.
+if [[ -z "$TMUX" ]]; then
+  tmux attach -t "$session_name"
+else
+  tmux switch-client -t "$session_name"
+fi
+
+
+
+#if [[ -z "$TMUX" ]] ;then
+#    ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
+#    if [[ -z "$ID" ]] ;then # if not available create a new one
+#        tmux new-session
+#    else
+#        tmux attach-session -t "$ID" # if available attach to it
+#    fi
+#fi
 
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -133,21 +159,8 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.config_files/.alias
-#=======
-#alias zshconfig="nvim ~/.zshrc"
-#alias ohmyzsh="nvim ~/.oh-my-zsh"
-#alias vimconfig="nvim ~/.config_files/init.vim"
-#alias py="python3"
-#alias yavide="gvim --servername yavide -f -N -u /opt/yavide/.vimrc"
-#alias vim="nvim"
-#alias luaconfig="nvim ~/.config_files/awesome/rc.lua"
-## Yavide alias
-#alias yavide="gvim --servername yavide -f -N -u /opt/yavide/.vimrc -u /opt/yavide/.vimrc"
-#alias nosetests="nosetests3"
-#alias windows_remote="xfreerdp /u:amundis /v:win.uio.no /w:1920 /h:1080 /cert-ignore"
-#alias extarz="tar -xvzf"
-#alias extar="tar -xvf"
-#alias windows="xfreerdp /v:win.uio.no /d:uio /u:amundis /size:2560x1440"
-#alias ifi="ssh amundis@login.ifi.uio.no"
+# Alias should no longer be put here, put it in .alias under .config_files
+
+
 tmux
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

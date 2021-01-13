@@ -1,4 +1,4 @@
-""" Optixal's Neovim Init.vim
+""" MrTeddyBear's Neovim init.vim
 
 
 """ Vim-Plug
@@ -25,6 +25,7 @@ Plug 'yuttie/hydrangea-vim'
 Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
 Plug 'rhysd/vim-color-spring-night'
 Plug 'sjl/badwolf'
+Plug 'sainnhe/sonokai'
 
 " Functionalities
 Plug 'tpope/vim-fugitive'
