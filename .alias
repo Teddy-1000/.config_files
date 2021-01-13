@@ -1,5 +1,5 @@
 alias vim="nvim"
-alias windows="xfreerdp /v:win.uio.no /d:uio /u:amundis /size:1920x1080"
+alias windows="xfreerdp /v:win.uio.no /d:uio /u:amundis /size:2560x1440 /smart-sizing:2560x1440"
 alias nordur="ssh amundis@nordur.ifi.uio.no"
 alias sudur="ssh amundis@sudur.ifi.uio.no"
 alias jordin="ssh amundis@sudor.ifi.uio.no"

@@ -17,6 +17,8 @@ antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
+antigen bundle z
+antigen bundle vscode
 #antigen bundle zsh-users/autojump
 #antigen bundle command-not-found
 #antigen bundle zsh-users/debianreso
@@ -130,7 +132,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-. ~/.alias
+source ~/.config_files/.alias
 #=======
 #alias zshconfig="nvim ~/.zshrc"
 #alias ohmyzsh="nvim ~/.oh-my-zsh"

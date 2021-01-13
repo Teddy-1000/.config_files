@@ -66,8 +66,10 @@ call plug#end()
 """ Python3 VirtualEnv
 let g:python3_host_prog = expand('/usr/bin/python')
 
+let g:jedi#force_py_version = 3
+
 """ Python2 env
-let g:python2_host_prog = expand('/usr/bin/python2')
+"let g:python2_host_prog = expand('/usr/bin/python2')
 
 
 """ Coloring
@@ -275,13 +277,10 @@ nmap <S-Tab> :bprevious<CR>
 nnoremap <F5> :QuickRunExecute<CR>
 
 set clipboard=unnamed,unnamedplus
-<<<<<<< HEAD
 "colorscheme gruvbox "Set colorscheme"
 "set background=dark "Set background color
-=======
 color gruvbox "Set colorscheme"
 set background=dark "Set background color
->>>>>>> fee67f2a015ddff7c066f5f1770b3b1a255bdc94
 syntax enable 		"Enable syntax processing"
 syntax on
 let g:gruvbox_contrast_light = 'soft'
