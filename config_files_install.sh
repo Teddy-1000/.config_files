@@ -46,6 +46,10 @@ rm ~/.config/i3/config
 
 ln -s ~/.config_files/config ~/.config/i3/
 
+#link tmux config file
+ln -s ~/.config_files/.tmux.conf ~/.tmux.conf
+
+
 #Set colorsheme for terminal
 #Install gruvbox dark
 wget -O gogh https://git.io/vQgMr && chmod +x gogh && ./gogh && rm gogh
