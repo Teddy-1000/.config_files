@@ -2,12 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/uio/hume/student-u62/amundis/.oh-my-zsh
+  export ZSH=/home/amundi/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="juanghurtado"
 POWERLEVEL9K_PROMT_ON_NEWLINE=true
 
 # Uncomment the following line to use case-sensitive completion.
@@ -85,3 +85,24 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 . ~/.alias
+
+#Set editor env variables
+export VISUAL=vim
+export EDITOR=vim
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/amundi/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/amundi/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/amundi/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/amundi/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
