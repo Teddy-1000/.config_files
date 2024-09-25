@@ -1,17 +1,10 @@
 #!/bin/bash
 
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-git clone https://github.com/sjl/badwolf.git ~/Downloads/badwolf
-
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 chsh -s /bin/zsh
 
 mkdir ~/.config/nvim/ -p
-
-mkdir ~/.config/nvim/colors -p
 
 #Make symlink for zshrc
 
@@ -49,16 +42,14 @@ ln -s ~/.config_files/config ~/.config/i3/
 #link tmux config file
 ln -s ~/.config_files/.tmux.conf ~/.tmux.conf
 
-
 #Set colorsheme for terminal
 #Install gruvbox dark
 wget -O gogh https://git.io/vQgMr && chmod +x gogh && ./gogh && rm gogh
 
-
 #create symlink for polybar config
 rm ~/.config/polybar/launch.sh
 ln -s ~/.config_files/launch.sh ~/.config/polybar/
-mkdir ~/Downloads/font 
+mkdir ~/Downloads/font
 # clone
 git clone https://github.com/powerline/fonts.git --depth=1 ~/Downloads/font/
 # install
