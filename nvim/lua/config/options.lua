@@ -9,6 +9,8 @@ vim.g.lazyvim_python_lsp = "pyright"
 vim.g.python3_host_prog = "/usr/bin/python3"
 -- vim.g.editorconfig.max_line_length = 120
 
+vim.g.snacks_animate = false
+
 return {
   "stevearc/conform.nvim",
   optional = true,
